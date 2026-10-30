@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheelocity - Spacecraft Reaction Wheel Sizing & Rotor Synthesis Studio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: ["class"],
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#040406",
+                        foreground: "#e5e7eb",
+                        primary: { DEFAULT: "#D4AF37", foreground: "#000000" }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Load React, ReactDOM, and Babel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+    <style>
+        body {
+            background-color: #040406;
+            color: #e5e7eb;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-image: linear-gradient(rgba(4, 4, 6, 0.88), rgba(4, 4, 6, 0.96)), url('image_fb4440.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #040406; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-[#040406] text-zinc-100 min-h-screen">
+    <div id="root"></div>
+
+    <!-- Load App components via Babel -->
+    <script type="text/babel" src="ErrorBoundary.jsx"></script>
+    <script type="text/babel" src="App.jsx"></script>
+    <script type="text/babel">
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+            <ErrorBoundary>
+                <App />
+            </ErrorBoundary>
+        );
+    </script>
+</body>
+</html>
